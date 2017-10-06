@@ -2,7 +2,7 @@
 
 groupe TP1 : 
 - Luciano Raphaêl & Anissa Lamhaouar
--
+- MACHHOURI Fatima & CAYUELAS Martin
 -
 
 groupe TP2 :
@@ -11,6 +11,8 @@ groupe TP2 :
 - GARDEISEN Marine & CHAWAF Alia 
 - Kueny Alexandre & GAYET Simon
 - Lacombe Hugo & Poulain Mathias 
+- Kueny Alexandre & GAYET Simon 
+- CHAIB Walid & MISSOUM Inès
 
 Groupe TP3 :
 -
