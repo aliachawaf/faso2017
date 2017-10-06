@@ -4,6 +4,7 @@ groupe TP1 :
 - Luciano Raphaêl & Anissa Lamhaouar
 - MACHHOURI Fatima & CAYUELAS Martin
 - ABADIE Aubin et GONCALVES Lucas
+- GUARY Nicolas & DANNER Marc Antoine
 
 groupe TP2 :
 - Carin Maxime & Guillaud Nathan
@@ -13,8 +14,15 @@ groupe TP2 :
 - Lacombe Hugo & Poulain Mathias 
 - Kueny Alexandre & GAYET Simon 
 - CHAIB Walid & MISSOUM Inès
+- Allard-Serre Thibaut & France Quentin
 
-Groupe TP3 :
--
--
--
+groupe TP3 :
+- Lucas Sardois & Alexis Sanchez
+- Yannick Mayeur & Adam Amar
+- William Regnart & Etienne Saimond
+- Audrey Samson & Solene Serafin
+- Hedvig Olander & Simuleac Ioana-Veroncia
+- Stefan Cipriana-Elena & Stuparu Andrei-Cristi
+- Yvan Sanson & Marie Salelles
+- Theo Ponthieu & Julien Roumagnac
+
