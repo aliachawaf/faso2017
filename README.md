@@ -18,4 +18,4 @@ groupe TP2 :
 Groupe TP3 :
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
--
+- Hedvig Olander & Simuleac Ioana-Veroncia
