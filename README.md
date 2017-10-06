@@ -19,4 +19,4 @@ Groupe TP3 :
 - Lucas Sardois & Alexis Sanchez
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
-
+- Audrey Samson & Solene Serafin
