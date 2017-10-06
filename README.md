@@ -1,6 +1,4 @@
 # faso.2017
-<<<<<<< HEAD
-=======
 
 groupe TP1 : 
 - Luciano Raphaêl & Anissa Lamhaouar
@@ -21,7 +19,8 @@ Groupe TP3 :
 - Lucas Sardois & Alexis Sanchez
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
+- Hedvig Olander & Simuleac Ioana-Veroncia
 - Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
 - Theo Ponthieu & Julien Roumagnac
->>>>>>> 7a7110d626793d1b0a4b4871eeb76ed315d8b16c
+
