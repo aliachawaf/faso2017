@@ -5,6 +5,7 @@ groupe TP1 :
 - MACHHOURI Fatima & CAYUELAS Martin
 - ABADIE Aubin et GONCALVES Lucas
 - GUARY Nicolas & DANNER Marc Antoine
+- GESTIN Rémi & LECHA Damien
 
 groupe TP2 :
 - Carin Maxime & Guillaud Nathan
