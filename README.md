@@ -9,7 +9,8 @@ groupe TP2 :
 - Carin Maxime & Guillaud Nathan
 - RANARIMAHEFA Mitantsoa Michel & Menouer Amjad
 - GARDEISEN Marine & CHAWAF Alia 
-- Kueny Alexandre & GAYET Simon 
+- Kueny Alexandre & GAYET Simon
+- Lacombe Hugo & Poulain Mathias 
 
 Groupe TP3 :
 -
