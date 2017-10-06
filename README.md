@@ -6,6 +6,7 @@ groupe TP1 :
 - ABADIE Aubin et GONCALVES Lucas
 - GUARY Nicolas & DANNER Marc Antoine
 - DEBEIR Luca & MAS Lucas
+- GESTIN Rémi & LECHA Damien
 
 groupe TP2 :
 - Carin Maxime & Guillaud Nathan
@@ -21,8 +22,8 @@ groupe TP3 :
 - Lucas Sardois & Alexis Sanchez
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
-- Audrey Samson & Solene Serafin
 - Hedvig Olander & Simuleac Ioana-Veronica
+- Audrey Samson & Solene Serafin
 - Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
 - Theo Ponthieu & Julien Roumagnac
