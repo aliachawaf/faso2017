@@ -21,7 +21,7 @@ groupe TP3 :
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
 - Audrey Samson & Solene Serafin
-- Hedvig Olander & Simuleac Ioana-Veroncia
+- Hedvig Olander & Simuleac Ioana-Veronica
 - Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
 - Theo Ponthieu & Julien Roumagnac
