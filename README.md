@@ -16,6 +16,9 @@ groupe TP2 :
 - Allard-Serre Thibaut & France Quentin
 
 Groupe TP3 :
+- Lucas Sardois & Alexis Sanchez
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
 - Hedvig Olander & Simuleac Ioana-Veroncia
+- Stefan Cipriana-Elena & Stuparu Andrei-Cristi
+- Yvan Sanson & Marie Salelles
