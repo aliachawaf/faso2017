@@ -1,4 +1,11 @@
 # faso.2017
+<<<<<<< HEAD
+Groupe 3 :
+Nom1: William 
+Nom2: AUdrey
+Nom1 : Ponthieu Nom2 : Roumagnac
+
+=======
 
 groupe TP1 : 
 - Luciano Raphaêl & Anissa Lamhaouar
@@ -22,3 +29,4 @@ Groupe TP3 :
 - Hedvig Olander & Simuleac Ioana-Veroncia
 - Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
+>>>>>>> 7a7110d626793d1b0a4b4871eeb76ed315d8b16c
