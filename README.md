@@ -19,8 +19,6 @@ Groupe TP3 :
 - Lucas Sardois & Alexis Sanchez
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
-<<<<<<< HEAD
 - Audrey Samson & Solene Serafin
-=======
 - Yvan Sanson & Marie Salelles
->>>>>>> 3aa7eef40e556eb7e6b5d9f0fe0d128809bb601a
+
