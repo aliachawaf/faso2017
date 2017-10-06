@@ -1,11 +1,4 @@
 # faso.2017
-<<<<<<< HEAD
-Groupe 3 :
-Nom1: William 
-Nom2: AUdrey
-Nom1 : Ponthieu Nom2 : Roumagnac
-
-=======
 
 groupe TP1 : 
 - Luciano Raphaêl & Anissa Lamhaouar
@@ -22,10 +15,12 @@ groupe TP2 :
 - CHAIB Walid & MISSOUM Inès
 - Allard-Serre Thibaut & France Quentin
 
-Groupe TP3 :
+groupe TP3 :
 - Lucas Sardois & Alexis Sanchez
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
+- Hedvig Olander & Simuleac Ioana-Veronica
+- Audrey Samson & Solene Serafin
 - Hedvig Olander & Simuleac Ioana-Veronica
 - Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
