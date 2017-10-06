@@ -13,6 +13,7 @@ groupe TP2 :
 - Lacombe Hugo & Poulain Mathias 
 - Kueny Alexandre & GAYET Simon 
 - CHAIB Walid & MISSOUM Inès
+- Allard-Serre Thibaut & France Quentin
 
 Groupe TP3 :
 -
