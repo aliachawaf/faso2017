@@ -24,3 +24,5 @@ groupe TP3 :
 - Hedvig Olander & Simuleac Ioana-Veronica
 - Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
+- Theo Ponthieu & Julien Roumagnac
+
