@@ -15,10 +15,11 @@ groupe TP2 :
 - CHAIB Walid & MISSOUM Inès
 - Allard-Serre Thibaut & France Quentin
 
-Groupe TP3 :
+groupe TP3 :
 - Lucas Sardois & Alexis Sanchez
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
 - Audrey Samson & Solene Serafin
+- Hedvig Olander & Simuleac Ioana-Veroncia
+- Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
-
