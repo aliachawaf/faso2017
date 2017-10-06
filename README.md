@@ -1,10 +1,5 @@
 # faso.2017
 <<<<<<< HEAD
-Groupe 3 :
-Nom1: William 
-Nom2: AUdrey
-Nom1 : Ponthieu Nom2 : Roumagnac
-
 =======
 
 groupe TP1 : 
@@ -28,4 +23,5 @@ Groupe TP3 :
 - William Regnart & Etienne Saimond
 - Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
+- Theo Ponthieu & Julien Roumagnac
 >>>>>>> 7a7110d626793d1b0a4b4871eeb76ed315d8b16c
