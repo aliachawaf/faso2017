@@ -4,6 +4,7 @@ groupe TP1 :
 - Luciano Raphaêl & Anissa Lamhaouar
 - MACHHOURI Fatima & CAYUELAS Martin
 - GUARY Nicolas & DANNER Marc Antoine
+- GESTIN Rémi & LECHA Damien
 
 groupe TP2 :
 - Carin Maxime & Guillaud Nathan
