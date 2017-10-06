@@ -6,6 +6,7 @@ groupe TP1 :
 - ABADIE Aubin et GONCALVES Lucas
 - GUARY Nicolas & DANNER Marc Antoine
 - GESTIN Rémi & LECHA Damien
+- Alice Burette & Thomas Falcone
 
 groupe TP2 :
 - Carin Maxime & Guillaud Nathan
