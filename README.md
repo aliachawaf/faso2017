@@ -16,6 +16,6 @@ groupe TP2 :
 - Allard-Serre Thibaut & France Quentin
 
 Groupe TP3 :
--
--
+- Yannick Mayeur & Adam Amar
+- William Regnart & Etienne Saimond
 -
