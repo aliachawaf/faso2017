@@ -7,6 +7,8 @@ groupe TP1 :
 - GUARY Nicolas & DANNER Marc Antoine
 - DEBEIR Luca & MAS Lucas
 - GESTIN Rémi & LECHA Damien
+- TRAINEAU Nathan & Ciubuc Alexandra
+
 
 groupe TP2 :
 - Carin Maxime & Guillaud Nathan
