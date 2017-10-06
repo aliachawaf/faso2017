@@ -8,7 +8,8 @@ groupe TP1 :
 groupe TP2 :
 - Carin Maxime & Guillaud Nathan
 - RANARIMAHEFA Mitantsoa Michel & Menouer Amjad
--
+- GARDEISEN Marine & CHAWAF Alia 
+- Kueny Alexandre & GAYET Simon 
 
 Groupe TP3 :
 -
