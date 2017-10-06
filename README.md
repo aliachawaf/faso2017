@@ -29,4 +29,3 @@ Groupe TP3 :
 - Hedvig Olander & Simuleac Ioana-Veroncia
 - Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
->>>>>>> 7a7110d626793d1b0a4b4871eeb76ed315d8b16c
