@@ -26,6 +26,6 @@ Groupe TP3 :
 - Lucas Sardois & Alexis Sanchez
 - Yannick Mayeur & Adam Amar
 - William Regnart & Etienne Saimond
-- Hedvig Olander & Simuleac Ioana-Veroncia
+- Hedvig Olander & Simuleac Ioana-Veronica
 - Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 - Yvan Sanson & Marie Salelles
