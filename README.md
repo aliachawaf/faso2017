@@ -7,7 +7,7 @@ groupe TP1 :
 - GUARY Nicolas & DANNER Marc Antoine
 - DEBEIR Luca & MAS Lucas
 - GESTIN Rémi & LECHA Damien
-- TRAINEAU Nathan & Ciubuc Alexandra
+- CIUBUC Alexandra & TRAINEAU Nathan
 - Alice Burette & Thomas Falcone
 
 
