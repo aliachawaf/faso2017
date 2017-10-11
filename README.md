@@ -20,7 +20,7 @@ groupe TP2 :
 - Kueny Alexandre & GAYET Simon 
 - CHAIB Walid & MISSOUM Inès
 - Allard-Serre Thibaut & France Quentin
-- Luangpraseuth Alexis & Arnaud Paul
+- Arnaud Paul & Luangpraseuth Alexis
 
 groupe TP3 :
 - Lucas Sardois & Alexis Sanchez
