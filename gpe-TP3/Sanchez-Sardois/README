@@ -9,6 +9,7 @@ Elle pourra rechercher parmis tous les titres présents sur internet et créer d
 Architecture
 ======
 Le projet est divisé en 2 grandes parties :
+
 * La partie enceinte, qui regroupe tous les programmes liés au fonctionnement de l'enceinte, comme par exemple la reconnaissance vocale, la recherche de musique etc...
 * La partie application Android, qui regroupe tout le code permettant de communiqué avec l'enceinte via bluetooth
 
