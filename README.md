@@ -1,33 +1,34 @@
 # faso.2017
 
 groupe TP1 : 
-- Luciano Raphaêl & Anissa Lamhaouar
-- MACHHOURI Fatima & CAYUELAS Martin
 - ABADIE Aubin & GONCALVES Lucas
-- GUARY Nicolas & DANNER Marc Antoine
+- BAHROUN-ELMADANI
+- BURETTE Alice & FALCONE Thomas
+- CAYUELAS Martin & MACHHOURI Fatima 
 - DEBEIR Luca & MAS Lucas
 - GESTIN Rémi & LECHA Damien
+- LUCIANO Raphael & Anissa LAMHAOUAR
 - CIUBUC Alexandra & TRAINEAU Nathan
-- Alice Burette & Thomas Falcone
+- GUARY Nicolas & DANNER Marc Antoine
 
 
 groupe TP2 :
-- Carin Maxime & Guillaud Nathan
-- RANARIMAHEFA Mitantsoa Michel & Menouer Amjad
-- GARDEISEN Marine & CHAWAF Alia 
-- Kueny Alexandre & GAYET Simon
-- Lacombe Hugo & Poulain Mathias 
-- Kueny Alexandre & GAYET Simon 
+- ALLARD-SERRE Thibaut & FRANCE Quentin
+- ARNAUD Paul & Luangpraseuth Alexis
 - CHAIB Walid & MISSOUM Inès
-- Allard-Serre Thibaut & France Quentin
+- CHAWAF Alia & GARDEISEN Marine
+- GAYET Simon & Kueny Alexandre
+- Lacombe Hugo & Poulain Mathias 
+- MENOUER Amjad & RANARIMAHEFA Mitantsoa Michel
+- CARIN Maxime & Guillaud Nathan
 
 groupe TP3 :
-- Lucas Sardois & Alexis Sanchez
 - Yannick Mayeur & Adam Megherat
-- William Regnart & Etienne Saimond
-- Hedvig Olander & Simuleac Ioana-Veronica
-- Audrey Samson & Solene Serafin
-- Stefan Cipriana-Elena & Stuparu Andrei-Cristi
-- Yvan Sanson & Marie Salelles
 - Theo Ponthieu & Julien Roumagnac
+- William Regnart & Etienne Saimond
+- Audrey SAMSON & Solene Serafin
+- Alexis SANCHEZ & Lucas Sardois
+- Yvan SANSON & Marie Salelles
+- Hedvig OLANDER & Simuleac Ioana-Veronica
+- Stefan Cipriana-Elena & Stuparu Andrei-Cristi
 
