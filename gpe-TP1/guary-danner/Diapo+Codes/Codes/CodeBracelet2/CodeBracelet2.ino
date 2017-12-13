@@ -14,7 +14,7 @@ DS1307 clock; //defini un objet de la classe DS1307 necessaire pour le RTC
 rgb_lcd lcd;
 
 //// Variables des boutons et Buzzer/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-unsigned long tok = millis(); //on init au début
+unsigned long tok = millis(); //on init au début de la pression du bouton OK
 int sosPin = 3;   // pin du bouton SOS
 int inOk = 4;   // pin du bouton OK
 int buzPin = 6; // pin du buzzer
@@ -35,7 +35,7 @@ unsigned char cpt;
 unsigned long temp[11];
 unsigned long sub;
 bool recuDonnee=true;
-unsigned int bpm=0;//the measurement result of heart rate
+unsigned int bpm=0;//résultat du calcul du BPM
 char sbpm[10];
 const int erreurBPM = 1000; /// Si 1000ms sans mesure == erreur
 
@@ -72,128 +72,62 @@ char ss[10];
         pinMode(6, OUTPUT); // Initialise le Buzzer sur le port D6
         pinMode(3, INPUT); //Initialise le Bouton SOS sur le port D3
         pinMode(4, INPUT); //Initialise le Bouton I'm Fine sur le port D4
-        lcd.setCursor(0, 1);
+        lcd.setCursor(0, 1); //Place le curseur de l'écran sur 2ème colonne
         lcd.write("BPM:");
 
 // Initialise l'horloge (fonctions de la librarie RTC)/////////////////////////////////////////////////////////////
     clock.begin();
-    clock.fillByYMD(2013,1,19);//Jan 19,2013
-    clock.fillByHMS(13,39,55);//15:28 30"
-    clock.fillDayOfWeek(SAT);//Saturday
+    clock.fillByYMD(2017,12,13);//Date
+    clock.fillByHMS(13,39,55);//HEURE A INITIALISER A LA MAIN
+    clock.fillDayOfWeek(WED);//Jour
     clock.setTime();//write time to the RTC chip
 
     }
-
-
     
     void loop()
     {
        
      calcTime(); //envoi heure au RTC 
-     Serial.write(bpm);
+     Serial.write(bpm); //On affiche le BPM sur le port série pour Processing
    
-     inSOS = digitalRead(sosPin);
+     inSOS = digitalRead(sosPin); 
      ok = digitalRead(inOk);
+     
      if (ok){
       tok=millis();
-     Serial.println("ici");//si le bouton est pressé on compte le temps depuis qu'il a été pressé
      }
      analogRead(bpm);
 
-     lcdBPM();
-     lcdHeure();
+     lcdBPM(); //Affiche la valeur du BPM sur l'écran
+     lcdHeure(); //Affiche l'heure sur l'écran
     
- 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //bpm=51;
-  if (not digitalRead(buzPin) && doitAllumer()){
+if (not digitalRead(buzPin) && doitAllumer()){
     digitalWrite(buzPin,HIGH);
+    //Signal processing pour SMS
   }
 
 if (doitEteindre()){
     digitalWrite(buzPin,LOW);
   }
-
-
-
-
   prevSOS = inSOS;
-
-// Si buzzerEteind 
-    // doitSallumer 
-        //Renvoie true si lon doit allumer le buzzer (en fonction du boutonsos ou deu bpm)
-        // Verifie si on a appuyer sur le bouton ok deouis moins de 10 sec
-
-
-    //Si doitSallumer 
-       // On allume
-
-
-// DoitSeteindre
-    // Regarde si le bouton ok est enclenché
-
-// si doitSeteindre
-    //On eteind le buzzer
-
-
-
- 
-    
-
-  /* 
-
- bpm=50;
-  
-    if(bpm > 0) {
-       
-      if ((bpm < 100 or bpm > 110) and okAppuye==1) {
-         buzz = HIGH; //on allume le buzzer
-         digitalWrite(buzPin, buzz); 
-         ok = digitalRead(inOk);
-      }
-    
-    if (ok == HIGH && okprev==LOW){
-    buzz = LOW;//on éteint le buzzer
-    okAppuye=0;
-   
-   digitalWrite(buzPin, buzz);
-   
-        }
-    }
-    
-  if (inSOS == HIGH && prevSOS == LOW && millis() - time > debounce) { // Si le bouton est passé correctement d'un état à l'autre
-  {
-
-      buzz = HIGH; //on allume le buzzer
-
-    time = millis(); //on stocke le temps écoulé   
-  }
-   if (ok == HIGH && okprev==LOW){
-      buzz = LOW; //on éteint le buzzer
- }
-  digitalWrite(buzPin, buzz);
-  prevSOS = inSOS;
-    }
- 
- */
-  }
+}
     
 ////Fonction: calcul du BPM de la fréquence cardiaque///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/* void bpmCalc()  {
+void bpmCalc()  {
      if(recuDonnee)
         { 
-          bpm=600000/(temp[10]-temp[0]);//60*10*1000/20_total_time 
-          //Serial.print("bpm_is:\t");
+          bpm=600000/(temp[10]-temp[0]);//60*10*1000/20_temps_total
+          //Serial.print("bpm:\t");
           Serial.println(bpm);
 
         
         }
-       recuDonnee=1;//sign bit
+       recuDonnee=1;//bit signe
 }
-
-*/
-
-    
+   
 //Fonction de la bibliothèque RTC permet d'afficher une alterte si le capteur ne reçoit pas de valeur//////////////////////////////////////////////////////////////////////////////////////////////
     void interrupt()
     {
@@ -230,11 +164,10 @@ if (doitEteindre()){
             cpt=0;
             recuDonnee=1;
         }
-
     }
-
     
 ///// Fonction: Initialise le tableau temp/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     void arrayInit()
     {
         for(unsigned char i=0;i < 10;i ++)
@@ -296,9 +229,8 @@ void calcTime()
 
 
 /// Affichage BPM sur ecran LCD ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void lcdBPM(){
-  
 
+void lcdBPM(){
     if (bpm<100){
     lcd.setCursor(4 , 1);
     itoa(bpm,sbpm,10);
@@ -315,6 +247,7 @@ void lcdBPM(){
 
 
 //// AFFICHAGE HEURE ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void lcdHeure(){
 if (h<10){
       lcd.setCursor(0,0);
@@ -347,18 +280,20 @@ if (m<10){
  }
     lcd.setCursor(5,0);
     lcd.write(":"); 
-        if (s<10){
-          lcd.setCursor(6,0);
-          lcd.write("0");
-          lcd.setCursor(7,0);
-          itoa(s,ss,10);
-          lcd.write(ss);
+if (s<10){
+    lcd.setCursor(6,0);
+    lcd.write("0");
+    lcd.setCursor(7,0);
+    itoa(s,ss,10);
+    lcd.write(ss);
         }
-        else {lcd.setCursor(6,0);
-        itoa(s,ss,10);
-        lcd.write(ss);
+else {lcd.setCursor(6,0);
+     itoa(s,ss,10);
+     lcd.write(ss);
         }
 }
+
+//Fonction qui teste si l'alerte doit être déclenchée//////////////////////////////////////////////////////////////////////
 
 bool doitAllumer(){
 
@@ -366,7 +301,7 @@ bool doitAllumer(){
     return false;
   }
   if(bpm > 0) {
-     if (bpm < 100 or bpm > 110) {
+     if (bpm < 40 or bpm > 110) {
         buzz = HIGH; //on allume le buzzer
         return true;
          }
@@ -379,15 +314,15 @@ bool doitAllumer(){
       return false;
 }
 
+
+//Fonction qui teste si l'alerte doit être stopée//////////////////////////////////////////////////////////////////////
 bool doitEteindre(){
    if (ok == HIGH && okprev==LOW){
     return true;
    }
-   if (bpm>50){
-    return false;
+   if (bpm>40){
+    return true;
    }
-   
-
   return false;
 }
 
