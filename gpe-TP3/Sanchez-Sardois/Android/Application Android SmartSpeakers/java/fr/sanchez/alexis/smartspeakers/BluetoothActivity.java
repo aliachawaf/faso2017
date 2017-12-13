@@ -76,7 +76,6 @@ public class BluetoothActivity extends AppCompatActivity{
         Button btn = (Button) findViewById(R.id.bl_btn);
         btn.setText("Désactiver le bluetooth");
 
-        //cancel any prior BT device discovery
         if (bluetoothAdapter.isDiscovering()){
             bluetoothAdapter.cancelDiscovery();
         }
