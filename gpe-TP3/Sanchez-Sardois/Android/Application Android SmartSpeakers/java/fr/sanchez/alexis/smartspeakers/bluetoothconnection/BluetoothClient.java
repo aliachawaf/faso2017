@@ -54,7 +54,7 @@ public class BluetoothClient {
         }
     }
 
-    // Annule toute connexion en cours
+    // Ferme la socket
     public void cancel() {
         try {
             blClientSocket.close();
@@ -70,7 +70,7 @@ public class BluetoothClient {
         } catch (IOException e) {
             Log.e("Smart Speakers", "Erreur envoie des données impossible", e);
 
-            // Send a failure message back to the activity.
+            // on envoie un message d'erreur
             Message writeErrorMsg =
                     mHandler.obtainMessage(BluetoothClient.MESSAGE_TOAST);
             Bundle bundle = new Bundle();
