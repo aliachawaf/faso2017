@@ -1,2 +1,0 @@
-accelerometre i2c
-collision D2
