@@ -82,10 +82,10 @@ if waterLevel == 0:
 	sendState(False)
 else:
     sendState(False)
-#   if checkConnection():
-#   	sendMailReservoirVide(destinataire)
-#if temperature > temperatureTreshold:
-#   if checkConnection():
-#       sendMailConditionCritique(destinataire)
+    if checkConnection():
+   	sendMailReservoirVide(destinataire)
+if temperature > temperatureTreshold:
+    if checkConnection():
+        sendMailConditionCritique(destinataire)
 
 
