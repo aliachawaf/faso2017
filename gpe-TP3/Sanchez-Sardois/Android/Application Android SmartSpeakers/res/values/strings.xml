@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Smart Speakers</string>
+
+    <!-- Msg MainActivity -->
+    <string name="text_bar">Nom de la musique</string>
+    <string name="msg_accueil">Smart Speakers - Bob</string>
+    <string name="msg_bluetooth">Connexion Bluetooth</string>
+    <string name="btn_text">R</string>
+
+    <!-- Msg BluetoothActivity -->
+    <string name="bluetooth_etat">Bluetooth activé: </string>
+    <string name="bluetooth_co">"Connecté à l'enceinte: "</string>
+    <string name="no_bluetooth">Votre appareil ne possède pas le Bluetooth</string>
+    <string name="list_appareil">Liste des appareils: </string>
+
+</resources>
