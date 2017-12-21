@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Container principale (alignement verticale) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="fr.sanchez.alexis.smartspeakers.MainActivity">
+
+    <!-- Texte en haut centré -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="@string/msg_accueil">
+    </TextView>
+
+    <!-- Container (alignement horiz. de la barre de recherche et du bouton -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_weight="10">
+
+        <!-- Barre de recherche -->
+        <EditText
+            android:id="@+id/barre_recherce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_weight="6"
+            android:hint="@string/text_bar" />
+
+        <!-- Bouton -->
+        <Button
+            android:id="@+id/button_recherche"
+            android:layout_width="50dp"
+            android:layout_marginEnd="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_text"/>
+
+    </LinearLayout>
+
+</LinearLayout>
