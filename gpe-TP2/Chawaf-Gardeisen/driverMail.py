@@ -17,7 +17,7 @@ def send_email2():
     gmail_pwd = "balirasp30"
     FROM = "bali, votre amour"
     TO = "bali.rasp30@gmail.com"
-    SUBJECT = "Votre courrer a ete recupere <3"
+    SUBJECT = "Votre courrier a ete recupere <3"
     TEXT = """\
 Vous avez releve votre courrier ! Et réinitialiser votre boite aux lettres
 
@@ -85,53 +85,32 @@ Qui vous aime.
 
 
 
-
-
-def send_mail_attach_files():
-
+def send_Bilan():
 
 	gmail_user = "bali.rasp30@gmail.com"
-    	gmail_pwd = "balirasp30"
-    	FROM = "bali, votre amour"
-    	TO = "bali.rasp30@gmail.com"
-    	SUBJECT = "Votre courrer a ete recupere <3"
-    	TEXT = """\
-		Vous avez releve votre courrier ! Et réinitialiser votre boite aux lettres
+	gmail_pwd = "balirasp30"
+	FROM = "bali, votre amour"
+	TO = "bali.rasp30@gmail.com"
+	SUBJECT = "Voici le bilan mensuel de ce mois ci "
+	TEXT = """\ envoie de la piece jointe """
 
-		XXXX
-	Bali, votre boite aux lettres intelligente à votre service.
-	Qui vous aime.
-	"""
-
-
-
-	part = MIMEApplication(open("graphe.png"),"rb").read()
-	part.add_header('Content-Disposition', 'attachment', filename="plot.png")
-        msg.attach(part)
-
-
-
-
-	    # Prepare actual message
-	message = """From: %s\nTo: %s\nSubject: %s\n\n%s""" % (FROM, ", ".join(TO), SUBJECT, TEXT)
-	try:
-        	server = smtplib.SMTP("smtp.gmail.com", 587)
-
-        	server.ehlo()
+	msg = MIMEMultipart()
+	msg['Subject']=SUBJECT 
+	msg['From']=FROM
 	
-        	server.starttls()
+	part = MIMEApplication(open('graphique.png',"rb").read())
+	part.add_header('Content-Disposition', 'attachment', filename='graphique.png')
+	msg.attach(part)
+ 
 
-        	server.login(gmail_user, gmail_pwd)
+	server = smtplib.SMTP("smtp.gmail.com:587")
+	server.ehlo()
+	server.starttls()
+	server.login(gmail_user, gmail_pwd)
+ 
+	server.sendmail(msg['From'], TO , msg.as_string())
 
-        	server.sendmail(FROM, TO, message)
 
-        	server.close()	
-
-		print 'successfully sent the mail'
-	
-	except:
-
-        	print "failed to send mail"	
 
 
 
