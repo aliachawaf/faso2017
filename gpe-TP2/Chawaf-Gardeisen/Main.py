@@ -16,10 +16,8 @@ v=0
 
 
 #initialisation des caracteristiques de la boite aux lettres
-lcd_commande(0x01)
-lcd_commande(0x0F)
-lcd_commande(0x38)
-lcd_message("Bali est VIDE ! ")
+lcd_init()
+lcd_message("Bali est VIDE !")
 lcd_couleur(130,0,5)  #rouge
 
 
@@ -85,9 +83,7 @@ while True:
 	if Etat_Bouton()==1 :
 
 		#initialisation de l'affichage écran
-		lcd_commande(0x01)
-		lcd_commande(0x0F)
-		lcd_commande(0x38)
+		lcd_init()
 		lcd_message(" Bali est VIDE !")
 		lcd_couleur(130,0,5)  #l'affichage de l'écran devient rouge
 
@@ -126,12 +122,12 @@ while True:
 	minute = maintenant.minute
 	seconde = maintenant.second
 
-	#le 1er jour du mois, on envoie un mail avec le graphique historique du mois precedent.
-	if jour==9 and heure==10 and minute == 30 and seconde ==0 :
+	#le 1er jour du mois à 8h00 pile, on envoie un mail avec le graphique historique du mois precedent.
+	if jour==1 and heure==8 and minute==0 and seconde==0 :
 		#on crée le graphique
 		os.system("python bilanMensuel.py")
 
-		#on envoie le grapahique en piece jointe par mail
+		#on envoie le graphique en piece jointe par mail
 		send_Bilan()
 
 		#on efface les donnees enregistrées dans les fichiers txt pour le mois suivant

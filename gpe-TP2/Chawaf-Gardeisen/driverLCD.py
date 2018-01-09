@@ -8,6 +8,12 @@ bus = smbus.SMBus(1)	# pour I2C-1 (port 1 du shield)
 DISPLAY_RGB_ADDR = 0x62		#adresse du shield
 DISPLAY_TEXT_ADDR = 0x3e 	#adresse de l'écran LCD
 
+def lcd_init():
+#reinitialise l'affichage de l'écran
+	lcd_commande(0x01)
+	lcd_commande(0x0F)
+	lcd_commande(0x38)
+
 
 
 def lcd_couleur(rouge, vert, bleu):
@@ -31,9 +37,7 @@ def lcd_commande(cmd):
 
 def lcd_message(string):
 #fonction permettant d'afficher le texte recu en paramètre sur l'écran
-	lcd_commande(0x01)
-	lcd_commande(0x0F)
-	lcd_commande(0x38)
+	lcd_init()
 
 	for c in string:
 		bus.write_byte_data(DISPLAY_TEXT_ADDR,0x40,ord(c))
