@@ -26,6 +26,9 @@ Ruby    : 2.4.3
 
 ## Procédure d'instalation
 
+1. Installer Ruby
+2. Transférer les fichiers
+
 ## Informations 
 
 version 2.0 le 11/01/2018
