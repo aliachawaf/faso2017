@@ -84,7 +84,7 @@ waterLevel = readWaterLevel()
 print(temperature, humidity, luminosity, moisture, waterLevel)	
 sendMeasures(temperature, humidity, luminosity, moisture)
 
-if waterLevel == 1:
+if waterLevel == 0:
     if luminosity < luminosityTreshold and moisture < moistureTreshold:
         sendState(True)
         arroser()
