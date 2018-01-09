@@ -11,7 +11,7 @@ DISPLAY_TEXT_ADDR = 0x3e 	#adresse de l'écran LCD
 
 
 def lcd_couleur(rouge, vert, bleu):
-#affiche une couleur obtenu par mélange du degré du rouge, vert et bleu choisis
+#affiche sur l'écran une couleur obtenue par mélange du degré du rouge, vert et bleu choisis
 
 	bus.write_byte_data(DISPLAY_RGB_ADDR,0x00,0x00)
 	bus.write_byte_data(DISPLAY_RGB_ADDR,0x01,0x00)
@@ -24,11 +24,13 @@ def lcd_couleur(rouge, vert, bleu):
 
 def lcd_commande(cmd):
 #affiche un caractère sur l'écran
+
 	bus.write_byte_data(DISPLAY_TEXT_ADDR,0x80,cmd)
 
 
+
 def lcd_message(string):
-#fonction permettant d'inscrire le texte recu en paramètre
+#fonction permettant d'afficher le texte recu en paramètre sur l'écran
 	lcd_commande(0x01)
 	lcd_commande(0x0F)
 	lcd_commande(0x38)
