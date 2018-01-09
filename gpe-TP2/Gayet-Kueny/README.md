@@ -3,16 +3,16 @@
 ## Architecture du projet
 
 	Projet
-	├── Main.py
-	├── Main_wifi.py
-	├── Wifi.py
-	├── Mail.py
-	└── FASO-WEB
+	├── Main.py					# Programme principal
+	├── Main_wifi.py				# Programme principal wifi
+	├── Wifi.py					# Programme wifi
+	├── Mail.py					# Programme mail
+	└── FASO-WEB					# Partie web
 	    └── app
 		├── views
 		│   ├── dashboard
-		│   │	└── show.html
+		│   │	└── show.html			# Page dashboard
 		│   └── settings
-		│	└── show.html
+		│	└── show.html			# Page settings
 		└── controllers
-		    └── settings_controller.rb
+		    └── settings_controller.rb		# Controller page settings
