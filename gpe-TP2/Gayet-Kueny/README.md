@@ -22,6 +22,7 @@
 
 Python  : 2.7.9  
 GrovePi : 1.2.2  
+Hostapd : 2.3
 Ruby    : 2.4.3  
 
 ## Procédure d'instalation
