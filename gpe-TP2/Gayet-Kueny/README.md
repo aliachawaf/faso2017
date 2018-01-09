@@ -24,3 +24,8 @@ Python  : 2.7.9
 GrovePi : 1.2.2  
 Ruby    : 2.4.3  
 
+## Procédure d'instalation
+
+## Informations 
+
+version 2.0 le 11/01/2018
