@@ -1,10 +1,11 @@
 from driverGrove.grovepi import *
 import time
+import urllib2
+import csv
 
 # Limite
 limiteUltrason = 50
 limiteLuminosite = 10
-EstMaison = False
 
 # Connect the Grove Ultrasonic Ranger to digital port D4
 # SIG,NC,VCC,GND
@@ -22,6 +23,11 @@ light_sensor = 0
 # PinMode Setup
 pinMode(light_sensor,"INPUT")
 pinMode(buzzer,"OUTPUT")
+
+estDedans = True
+posMaison = [43.69473119, 1.27020893]
+myFile = open('data.csv', 'a')
+writer = csv.writer(myFile)
 
 
 def readU():
@@ -71,24 +77,47 @@ def ring():
 def insertBD():
     pass
 
+def getPos():
+    return urllib2.urlopen("http://serveur-projet-fas-ig3.appspot.com/?cmd=getPosition").read().split(', ')
+
+def estMaison():
+    pos = getPos()
+    estMaison = True
+    if float(pos[0]) > posMaison[0] + 0.0002 or float(pos[0]) < posMaison[0] - 0.002:
+        estMaison = False
+    elif float(pos[1]) > posMaison[1] + 0.0002 or float(pos[1]) < posMaison[1] - 0.002:
+        estMaison = False
+    return estMaison
+
 
 while True:
     if readU() < limiteUltrason:
-        if EstMaison:
-            if readL() < limiteLuminosite and (int(time.strftime('%H')) < 13 or int(time.strftime('%H')) >= 18):
-                print 'alarme'
+        if estDedans:
+            if readL() < limiteLuminosite and (int(time.strftime('%H')) < 17 or int(time.strftime('%H')) >= 18):
+                print("alerte lumiere")
+                data = ["lumiere", time.strftime("%Y-%m-%d %H:%M")]
+                writer.writerow(data)
                 ring()
             else:
-                print 'tout est normal'
+                data = ["depart", time.strftime("%Y-%m-%d %H:%M")]
+                writer.writerow(data)
+                print("au revoir")
+                estDedans = False
         else:
-            position = input('Est - tu chez toi? (0 pour oui)\n')
-            if position is not 0: # 0 si maison autre chose si non
+            position = estMaison()
+            if not position: # 0 si maison autre chose si non
+                data = ["intrusion", time.strftime("%Y-%m-%d %H:%M")]
+                writer.writerow(data)
                 for x in range(0, 10):
-                    print 'alarme'
+                    print("alerte intru")
                     ring()
                     time.sleep(1)
             else:
-                EstMaison = True
-
-
+                estDedans = True
+                data = ["arrive", time.strftime("%Y-%m-%d %H:%M")]
+                writer.writerow(data)
+                print("bienvenue")
+        while readU() < limiteUltrason:
+            time.sleep(0.1)
+            print("stand by")
     time.sleep(1)
