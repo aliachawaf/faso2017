@@ -1,3 +1,8 @@
+// Explication !!!!!!!!!!!!!!!
+//On utilise le logiciel arduino pour notre code 
+//il est important d'importer la bibliothjèque OneWire et RGB_LCD pour pouvoir utiliser certaines commandes
+//Les versions n'importent peu
+//Le code est clair il suit une hiérarchie classique : importations, setup,loop, fonctions annexes
 // ---------- Initialisation des Bibliothèques
 #include <OneWire.h>
 #include <Wire.h>
