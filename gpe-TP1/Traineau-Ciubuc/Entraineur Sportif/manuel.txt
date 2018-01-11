@@ -1,0 +1,37 @@
+Manuel d'utilisation
+
+Bonjour vous êtes sur votre entraineur sportif, cet entraineur vous propose plusieurs entrainements 
+contrôlés et coachés par ce mini ordinateur qu'est le raspberry. 
+
+Cette page ne remplace pas le manuel d'utilisation sous forme de fichier que vous avez reçues avec le programme.
+Il s'agit simplement d'une synthèse des faits importants à retenir.
+
+Branchement du raspberry :
+
+Reliez le raspberry à un écran au moyens d'une connexion hdmi, puis à un clavier et une souris
+(le faire avant de brancher le raspberry au courant c'est très important !), puis branchez le avec son chargeur.
+
+Branchez les capteurs suivants aux ports affiliés  (protcole et description dans le manuel complet ):
+Capteur de distance :D4
+Capteur de température : A0
+Buzzer : D7
+Bouton : D3
+Ecran lcd :I2C (n'importe lequel)
+
+Très bien, votre entraineur est prêt maintenant revenons à l'application que vous venez d'ouvrir :
+Vous pouvez y choisir différents entrainements dont le descriptif est donné en cliquant sur le bouton : descriptif entrainements.
+
+Les entraînements se déroulent de la façon suivante :
+Vous allez passer un tutoriel pour apprendre à utiliser le système de bouton mis en place pour dialoguer avec l'entraineur dont je reviendrais plus tard.
+Au début de chaque entrainements on prend vos mesures de pompes et gainage pour adapter les mesures à vos proportions.
+Ensuite il s'agit d'une succession d'exercice pompe ou gainage:
+
+Le système de bouton : Pour finir un exercice, une pause, ou avancer dans des explications quand on vous le demande appuyez moins de 3 secondes
+Si vous desirez reprendre vos mesures à n'importe qu'elle moment appuyez entre 3 et 7 secondes.
+Si vous voulez arrêter l'entrainement appuyez plus de 7 secondes.
+A chaque fois le temps d'appui et l'action sont indiqués sur l'écran lcd.
+
+A la fin de votre entrainement une fenetre s'ouvrira et affichera vos statistiques de pompes, fermez la pour avoir une deuxième fenêtre avec les statistiques du gainage.
+Bon entrainement :)
+
+

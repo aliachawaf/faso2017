@@ -1,0 +1,11 @@
+body{
+	background-color = black;
+}
+
+#affichage_2{
+	display: none;
+}
+
+#affichage_3{
+	display: none;
+}

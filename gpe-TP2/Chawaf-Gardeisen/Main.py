@@ -2,6 +2,7 @@
 
 import os
 
+#pour avoir permission
 os.system("sudo chmod a+rw /dev/i2c-*")
 
 from driverLCD import *
@@ -12,7 +13,7 @@ import datetime
 
 #envoie du bilan de demonstration
 send_BilanDemo()
-v=0
+
 
 
 #initialisation des caracteristiques de la boite aux lettres
@@ -34,9 +35,6 @@ maintenant = datetime.datetime.now()
 with open('HistoriqueTemps.txt', 'a') as f:
 	f.write(str(maintenant.second) + '\n')
 
-#with open('HistoriqueTemps.txt', 'a') as f:
- #       f.write(str(maintenant.second) + '\n')
-
 
 n=0	#variable utilisée pour empecher le capteur de mvt d'etre en marche lorsque la boite est deja pleine
 
@@ -47,7 +45,7 @@ while True:
 
 	#si le capteur de mouvement s'active et que la boite est vide (n==0)
 	if (Detection_Courrier() and n==0):
-		
+
 		#changement de l'affichage de l'écran
 		lcd_message(" Bali est PLEINE!")
 		lcd_couleur(0,130,5) #vert
@@ -87,7 +85,7 @@ while True:
 		lcd_message(" Bali est VIDE !")
 		lcd_couleur(130,0,5)  #l'affichage de l'écran devient rouge
 
-		v=v+1
+
 
 		time.sleep(3) #on arrete le fonctionnement du capteur de mouvement le temps que l'utilisateur referme la porte de bali
 
@@ -136,11 +134,6 @@ while True:
 
 
 	#pour la soutenance, on envoie un mail avec un graphique historique à la fin de la minute
-	if v == 4:
+	if seconde in range(45,50):
 		os.system("python bilanMensuel.py")
 		send_Bilan()
-		v=0
-
-
-
-

@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+  <a class="navbar-brand">Arroseur automatique</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="<%= dashboard_path %>">Dashboard</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= settings_path %>">Settings</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br><br>
+<h2 style="text-align: center">Settings</h2>
+<br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col">
+      <%= form_for @setting, url: {action: 'create'} do |f| %>
+
+          <h5>Wifi :</h5>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Wifi name</span>
+            <%= f.text_field :wifi_name, class: 'form-control' %>
+          </div>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Wifi password</span>
+            <%= f.password_field :wifi_password, class: 'form-control' %>
+          </div>
+          <br><br>
+          <h5>Tresholds :</h5>
+          <div class="input-group">
+            <span class="input-group-addon">Moisture treshold</span>
+            <%= f.number_field :moisture_treshold, in: 0..100, class: 'form-control' %>
+            <span class="input-group-addon">%</span>
+          </div>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon">Temperature treshold min</span>
+            <%= f.number_field :temperature_treshold_min, in: 0..50, class: 'form-control' %>
+            <span class="input-group-addon">°C</span>
+          </div>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon">Temperature treshold max</span>
+            <%= f.number_field :temperature_treshold_max, in: 0..50, class: 'form-control' %>
+            <span class="input-group-addon">°C</span>
+          </div>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon">Luminosity treshold</span>
+            <%= f.number_field :luminosity_treshold, in: 0..50, class: 'form-control' %>
+            <span class="input-group-addon">?</span>
+          </div>
+          <br>
+          <br><br>
+          <%= f.submit 'Save', class: 'btn btn-success' %>
+
+      <% end %>
+    </div>
+    <div class="col-1">
+    </div>
+  </div>
+</div>
