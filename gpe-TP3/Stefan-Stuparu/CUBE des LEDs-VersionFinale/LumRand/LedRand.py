@@ -23,8 +23,7 @@ def lumiereRand():
 			digitalWrite(led,0)
                         digitalWrite(ledb,0)
                         digitalWrite(ledg,0)
-                        time.sleep(1)
-			i=random.randint(-1,6)
+                        i=random.randint(-1,6)
 			 	#fqr= files.readlines()
 			if int(i) == 0 or int(i) == 3 :
                                 #Blink the LED
