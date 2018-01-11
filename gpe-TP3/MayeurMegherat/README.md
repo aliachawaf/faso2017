@@ -19,5 +19,5 @@ de Android Studio pour le moment.
 
 Il faut récuperer le code du projet sur la raspberry à l'aide de la commande:
 `scp raspberry/ pi@<ip-du-raspberry>:~`
-Il n'y a pas besoin de compilation pour le code python
-Le code du projet se lance à l'aide de la commande `python projet.py` 
+Il n'y a pas besoin de compilation pour le code python.
+Le code du projet se lance à l'aide de la commande `python projet.py`.
