@@ -1,4 +1,4 @@
-# **Lecteur MP3 mains libres **
+# Lecteur MP3 mains libres
 
 ## Hiérarchie du code
 
