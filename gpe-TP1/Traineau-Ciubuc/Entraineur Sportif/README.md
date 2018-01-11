@@ -1,6 +1,6 @@
 Tout les scripts sont dans le même répertoire pour faciliter les from machin import * qui ont tendances 
 à créer beaucoup de problèmes entre plusieurs dossiers.
-Il y a un main dit "graphique" qui gère l'application tkinter et importe entrainement et lance les fonctions de ce script
+Il y a un main dit "graphique" (InterfaceGraphique) qui gère l'application tkinter et importe entrainement et lance les fonctions de ce script
 , Entrainement est le main de la partie "raspberry" il va appeler les packages Bouton, Affichage et Exercices pour faire tourner 
 l'entrainement. Ces packages appelent la bibliothèque grovepi ou lcd_rgb.
 L'application tkinter ouvre également des fichiers texte "manuel d'utilisation" et " Descriptifs des entraînements"
