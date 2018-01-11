@@ -15,6 +15,7 @@ compatibilité : GrovePi
 ## Interfaces :
 
 Tous les fichiers d'interface se trouvent dans /var/www/html/miroir, ils sont composés de fichier html, css et js
+
 3. **graph.html :**
 affichage d'un graph contenant les données envoyées par temp.py
  
