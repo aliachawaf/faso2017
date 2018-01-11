@@ -1,6 +1,7 @@
-PROJET: Lampe Magique
-NOM: OLANDER Hedvig et SIMULEAC Ioana-Veronica
-
+-#PROJET: Lampe Magique
+=======================
+-#NOM: OLANDER Hedvig et SIMULEAC Ioana-Veronica
+=======================
 Hiérarchie de code:
 
 * Le programme principale est : "programmeLampe.py". Il utilise les bibliotheques grovePi, buzzer, light et move;
