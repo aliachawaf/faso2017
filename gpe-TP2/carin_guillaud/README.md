@@ -10,9 +10,6 @@ Notre projet de sonnette interactive a pour objectif d’informer l’utilisateu
 Pour faire fonctionner la sonnette, voici les différentes étapes :
 - Télécharger l’ensemble du répertoire « prog » de Github sur le Raspberry
 - Se placer dans le répertoire contenant tous les fichiers et taper la commande « sudo python main.py » qui lance le programme principal
-- Pour consulter les photos et messages enregistrer, se connecter au compte Google avec les identifiants suivants :
-	 - identifiant : sonnette.interactive@gmail.com
-	- mot de passe : interactive34
 
 
 ## Architecture
