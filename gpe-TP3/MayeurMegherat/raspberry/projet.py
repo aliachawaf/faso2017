@@ -74,8 +74,9 @@ def ring():
     except KeyboardInterrupt:
         digitalWrite(buzzer,0)
 
-def insertBD():
-    pass
+def insertBD(type):
+    data = [type, time.strftime("%Y-%m-%d %H:%M")]
+    writer.writerow(data)
 
 def getPos():
     return urllib2.urlopen("http://serveur-projet-fas-ig3.appspot.com/?cmd=getPosition").read().split(', ')
@@ -95,27 +96,23 @@ while True:
         if estDedans:
             if readL() < limiteLuminosite and (int(time.strftime('%H')) < 17 or int(time.strftime('%H')) >= 18):
                 print("alerte lumiere")
-                data = ["lumiere", time.strftime("%Y-%m-%d %H:%M")]
-                writer.writerow(data)
+                insertBD("lumiere")
                 ring()
             else:
-                data = ["depart", time.strftime("%Y-%m-%d %H:%M")]
-                writer.writerow(data)
+                insertDB("depart")
                 print("au revoir")
                 estDedans = False
         else:
             position = estMaison()
             if not position: # 0 si maison autre chose si non
-                data = ["intrusion", time.strftime("%Y-%m-%d %H:%M")]
-                writer.writerow(data)
+                insertBD("intrusion")
                 for x in range(0, 10):
                     print("alerte intru")
                     ring()
                     time.sleep(1)
             else:
                 estDedans = True
-                data = ["arrive", time.strftime("%Y-%m-%d %H:%M")]
-                writer.writerow(data)
+                insertBD("arrive")
                 print("bienvenue")
         while readU() < limiteUltrason:
             time.sleep(0.1)
