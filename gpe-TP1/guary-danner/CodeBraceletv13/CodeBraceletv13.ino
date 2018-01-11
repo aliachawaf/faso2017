@@ -120,7 +120,7 @@ void loop() {
     digitalWrite(buzPin, HIGH);
     alerte = true;
     
-    Serial.println("8"); 
+    Serial.println("1"); 
     Serial.print("");
     bon=false;
     // Ajouter Signal processing pour SMS

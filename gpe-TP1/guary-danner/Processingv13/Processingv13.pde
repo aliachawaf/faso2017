@@ -82,9 +82,9 @@ void draw() {
    myString = monPort.readStringUntil(lf); //Lire les données recues jusqu'au saut de ligne
    if (myString!=null) {
    myString = trim(myString); //Séparer le texte recu en ascii
-   println(myString);
-   println(valeurbool);
-   if (myString=="8") { //fonction qui determine si il y a une alerte
+   //println(myString);
+   //println(valeurbool);
+   if (myString=="1") { //fonction qui determine si il y a une alerte
      valeurbool=true;
      
    }
@@ -118,7 +118,7 @@ void draw() {
  }
   
   
-    println(valeurbool);
+    //println(valeurbool);
     println(valeur); // AFFICHE a l'ecran la valeur lue
     //delay(1000);
     // TO DO : 
