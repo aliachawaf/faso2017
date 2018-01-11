@@ -84,7 +84,7 @@ void draw() {
    myString = trim(myString); //Séparer le texte recu en ascii
    println(myString);
    println(valeurbool);
-   if (myString=="True") { //fonction qui determine si il y a une alerte
+   if (myString=="8") { //fonction qui determine si il y a une alerte
      valeurbool=true;
      
    }
@@ -156,7 +156,7 @@ void draw() {
    }
    catch (Exception e)
    {
-     // deal with the exception in your "controller"
+   
    }
    
  }
@@ -170,21 +170,20 @@ void draw() {
 
    try
    {
-     // create the HttpURLConnection
+     // creation de la connection
      url = new URL(desiredUrl);
      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
      
-     // just want to do an HTTP GET here
+     // http get
      connection.setRequestMethod("GET");
      
-     // uncomment this if you want to write output to this url
-     //connection.setDoOutput(true);
+
      
-     // give it 15 seconds to respond
+     // laisse 15 secondes au serveur pour répondre
      connection.setReadTimeout(5*1000);
      connection.connect();
 
-     // read the output from the server
+     // lit la réponse
      reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
      stringBuilder = new StringBuilder();
 
@@ -197,15 +196,14 @@ void draw() {
    }
    catch (Exception e)
    {
-     //e.printStackTrace();
+
            println("url not found");
      throw e;
 
    }
    finally
    {
-     // close the reader; this can throw an exception too, so
-     // wrap it in another try/catch block.
+
      if (reader != null)
      {
        try

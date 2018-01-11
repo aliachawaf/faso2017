@@ -31,6 +31,7 @@ public class BluetoothActivity extends AppCompatActivity{
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         if(!(bluetoothAdapter == null)){
+
             //Requete d'écoute sur les changements d'état du composant Bluetooth
             IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
             registerReceiver(bluetoothEcoute, filter);
@@ -154,7 +155,6 @@ public class BluetoothActivity extends AppCompatActivity{
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 if (!periph.contains(device.getName()))  {
                     periph.add(device.getName());
-                    Log.e("Smart Speakers", "Trouvé new appareil");
                     TextView textView = (TextView)findViewById(R.id.liste_appareils);
                     if(textView.getText() == "Aucun"){
                         textView.setText(device.getName());
@@ -180,7 +180,6 @@ public class BluetoothActivity extends AppCompatActivity{
     private boolean isConnectedToBob() {
         if(bluetoothAdapter != null) {
             BluetoothDevice enceinte = bluetoothAdapter.getRemoteDevice(ADRESSE_MAC_ENCEINTE);
-            Log.e("Tag", Integer.toString(enceinte.getBondState()));
             if ((enceinte.getBondState() == BluetoothDevice.BOND_BONDED) && (bluetoothAdapter.getState() == BluetoothAdapter.STATE_ON)){
                 TextView textView = (TextView)findViewById(R.id.enceinte_etat);
                 textView.setText("oui");

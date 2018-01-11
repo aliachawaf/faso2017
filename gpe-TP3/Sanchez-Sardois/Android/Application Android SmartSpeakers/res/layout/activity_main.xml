@@ -2,6 +2,7 @@
 
 <!-- Container principale (alignement verticale) -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,16 +16,16 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:text="@string/msg_accueil">
+
     </TextView>
 
     <!-- Container (alignement horiz. de la barre de recherche et du bouton -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:layout_weight="10">
+        android:orientation="horizontal">
 
         <!-- Barre de recherche -->
         <EditText
@@ -39,9 +40,58 @@
         <Button
             android:id="@+id/button_recherche"
             android:layout_width="50dp"
-            android:layout_marginEnd="20dp"
             android:layout_height="wrap_content"
-            android:text="@string/btn_text"/>
+            android:layout_marginEnd="20dp"
+            android:text="@string/btn_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="90dp">
+
+        <ImageButton
+            android:id="@+id/vol_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/vol_down"
+            android:layout_marginRight="15dp"/>
+
+        <ImageButton
+            android:id="@+id/music_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/left"
+            android:layout_marginRight="20dp"/>
+
+        <ImageButton
+            android:id="@+id/music_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/play"
+            android:layout_marginRight="20dp" />
+
+        <ImageButton
+            android:id="@+id/music_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/right" />
+
+        <ImageButton
+            android:id="@+id/vol_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/vol_up"
+            android:layout_marginLeft="15dp"/>
+
 
     </LinearLayout>
 
