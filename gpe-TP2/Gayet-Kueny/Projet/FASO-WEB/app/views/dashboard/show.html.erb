@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+  <a class="navbar-brand">Arroseur automatique</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= dashboard_path %>">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= settings_path %>">Settings</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br><br>
+<h2 style="text-align: center">Dashboard</h2>
+<br><br>
+
+temperature
+<%= line_chart Temperature.where('created_at > ?', Time.now - 1.week).pluck(:created_at, :value), library: {elements: {point: {radius: 1}}} %>
+moisture
+<%= line_chart Moisture.where('created_at > ?', Time.now - 1.week).pluck(:created_at, :value), library: {elements: {point: {radius: 1}}} %>
+luminosity
+<%= line_chart Luminosity.where('created_at > ?', Time.now - 1.week).pluck(:created_at, :value), library: {elements: {point: {radius: 1}}} %>
+humidity
+<%= line_chart Humidity.where('created_at > ?', Time.now - 1.week).pluck(:created_at, :value), library: {elements: {point: {radius: 1}}} %>
+pump
+<%= line_chart Watering.where('created_at > ?', Time.now - 1.week).pluck(:created_at, :state).map{|x| x[1] ? [x[0], 1] : [x[0], 0]}, library: {elements: {point: {radius: 1}}} %>

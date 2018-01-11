@@ -37,7 +37,7 @@ def sendMailConditionCritique(destinataire):
 	message = '''Ce message vous est envoyé par votre e-sprinkler.
 
 Bonjour
-Votre plante est en train de subir des condition critique, les seuils de température que vous nous avez donné on été dépasser.   ''' 
+Votre plante est en train de subir des conditions critiques, les seuils de température que vous nous avez donnés on été dépassés.   ''' 
 	msg.attach(MIMEText(message))
 	mailserver = smtplib.SMTP('smtp.gmail.com', 587)  #on selectionne la boite mail de l'envoyeur gmail/yahou/orange
 	mailserver.ehlo()

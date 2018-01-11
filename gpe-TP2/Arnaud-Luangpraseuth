@@ -1,0 +1,186 @@
+// Explication !!!!!!!!!!!!!!!
+//On utilise le logiciel arduino pour notre code 
+//il est important d'importer la bibliothjèque OneWire et RGB_LCD pour pouvoir utiliser certaines commandes
+//Les versions n'importent peu
+//Le code est clair il suit une hiérarchie classique : importations, setup,loop, fonctions annexes
+// ---------- Initialisation des Bibliothèques
+#include <OneWire.h>
+#include <Wire.h>
+#include "rgb_lcd.h"
+
+// ---------- Initialisation des variables ---------------------
+
+// Variables propres à l'écran
+rgb_lcd lcd;
+
+// Variables propres au capteur de température
+float TempMoy=0.0;
+const int PortCapteurTemperature=4;
+const int CapteurTemperature=0x28;
+OneWire ds(PortCapteurTemperature);
+float temperature;
+
+// Variables propre au capteur de débit
+byte sensorInterrupt = 0; 
+byte sensorPin       = 2;
+float calibrationFactor = 4.5;
+volatile byte pulseCount;
+float flowRate;
+int flowMilliLitres;
+float totalMilliLitres;
+unsigned long oldTime;
+
+void setup()
+  {
+  lcd.begin(16, 2);
+  pinMode(sensorPin, INPUT);
+  digitalWrite(sensorPin, HIGH);
+  pulseCount        = 0;
+  flowRate          = 0.0;
+  flowMilliLitres   = 0;
+  totalMilliLitres  = 0;
+  oldTime           = 0;
+  //Le capteur est connecté au pin 2 qui utilise interrupt 0. L'interruption est configurée pour activer une transition d'un état HIGH vers LOW.
+  attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
+  }
+
+void loop()
+  { 
+  // PROGRAMME TEMPERATURE
+  temperature = getTemperature();
+  TempMoy = (TempMoy + temperature)/2;
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("T = "); 
+  lcd.print(temperature);
+  
+  if ((temperature)< 30)
+    {
+    lcd.setRGB(0, 0, 250);
+    }
+  if (((temperature)> 30)&&((temperature)< 40))
+    {
+    lcd.setRGB(0, 250, 0);
+    }
+  if ((temperature)> 40)
+    {
+    lcd.setRGB(250, 0, 0);
+    }
+  
+  // PROGRAMME DEBIT
+  if((millis() - oldTime) > 1000)    //le programme s'execute au maximum une fois par seconde 
+    { 
+    //On désactive l'interruption durant le calcul du débit et l'envoi à l'utilisateur 
+    detachInterrupt(sensorInterrupt);
+    //Comme cette boucle peut ne pas durer exactement 1 seconde, on calcule le nombre de millisecondes passées depuis la dernière exécution et on utilise le résultat pour déterminer la sortie. On utilise aussi le calibrationFactor pour déterminer la sortie en se basant sur le débit en litres par minute provenant du capteur.
+    flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) / calibrationFactor;    
+    //On note le moment où ce traitement est exécuté( à noter: comme nous avons désactivé l'interruption, la fonction millis() va renvoyer sa valeur juste avant l'interruption) 
+    oldTime = millis();
+    //On divise le débit en litres/minute par 60 pour avoir le débit par seconde, puis on multiplie par 1000 pour avoir le débit en milliLitres/seconde.
+    flowMilliLitres = (flowRate / 60) * 1000;
+    //On ajoute les milliLitres consommés durant cette seconde au total cumulé.
+    totalMilliLitres += flowMilliLitres;
+    //On affiche le débit de cette seconde en litres/minute.
+    lcd.setCursor(0,1);
+    lcd.print("DebRate=");
+    lcd.print(int(flowRate));  // On affiche uniquement la partie int du débit.
+    lcd.print("L/min");
+    //On remet à zéro le nombre de pulsations pour pouvoir de nouveau incrémenter.
+    pulseCount = 0;
+    //On réactive l'interruption maintenant que nous avons terminé l'envoi des données.
+    attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
+    }
+  if ((flowRate) == 0) 
+    {
+    lcd.clear();
+    // on affiche la température moyenne sur la première ligne
+    lcd.setCursor(0,0);
+    lcd.print("TempMoy=");
+    lcd.print(TempMoy);
+    // on affiche le volume d'eau total sur la deuxème ligne
+    lcd.setCursor(0,1);
+    lcd.print("TotVol="); 
+    lcd.print(totalMilliLitres/1000);
+    lcd.print("L");
+    delay(2000);
+    lcd.clear();
+    // on affiche les conseils
+    for (int positionCounter = 0; positionCounter < 10; positionCounter++) 
+      {
+      // scroll one position left:
+      if (((totalMilliLitres)/1000) < 5)
+        {
+        lcd.setCursor(5,0);
+        lcd.print("Conseil : Tres bien!");
+        lcd.setCursor(5,1);
+        lcd.scrollDisplayLeft();
+        lcd.print("Continuez ainsi!");
+        delay(200);
+        }
+      if ((((totalMilliLitres)/1000) < 7.5) && (((totalMilliLitres)/1000) > 5)) 
+        {
+        lcd.setCursor(5,0);
+        lcd.print("Conseil : Ca va!");
+        lcd.setCursor(5,1);
+        lcd.scrollDisplayLeft();
+        lcd.print("Proges a faire");
+        delay(200);
+        }
+      if ((((totalMilliLitres)/1000) > 7.5) && (((totalMilliLitres)/1000) < 10)) 
+        {
+        lcd.setCursor(2,0);
+        lcd.print("Conseil : Bof Bof");
+        lcd.setCursor(2,1);
+        lcd.scrollDisplayLeft();
+        lcd.print("Vous devez faire mieux!");
+        delay(200);
+        }
+      if (((totalMilliLitres)/1000) > 10) 
+        {
+        lcd.setCursor(2,0);
+        lcd.print("Conseil : Tres mauvais!");
+        lcd.setCursor(2,1);
+        lcd.scrollDisplayLeft();
+        lcd.print("Et la planete dans tout ca?");
+        delay(200);
+        }
+      }
+    }
+  }
+
+/* --------------- Acquisition de la température ----------------------------------- */
+float getTemperature()
+  {
+  byte i;
+  byte data[12];
+  byte addr[8];
+  float temp =0.0;
+  
+  //Il n'y a qu'un seul capteur, donc on charge l'unique adresse.
+  ds.search(addr);
+  // Demander au capteur de mémoriser la température et lui laisser 1000ms pour le faire (voir datasheet)
+  ds.reset();
+  ds.select(addr);
+  ds.write(0x44);
+  delay(1000);
+  // Demander au capteur de nous envoyer la température mémorisé
+  ds.reset();
+  ds.select(addr);
+  ds.write(0xBE);
+  // Le MOT reçu du capteur fait 9 octets, on les charge donc un par un dans le tableau data[]
+  for ( i = 0; i < 9; i++) 
+    {
+    data[i] = ds.read();
+    }
+  // Puis on converti la température (*0.0625 car la température est stockée sur 12 bits)
+  temp = ((data[1] << 8) + data[0])*0.0625;
+  return temp;
+  }
+/*
+Insterrupt Service Routine
+ */
+void pulseCounter()
+  {
+  pulseCount++;
+  }
+
