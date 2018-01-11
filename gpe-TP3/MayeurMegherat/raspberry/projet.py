@@ -99,7 +99,7 @@ while True:
                 insertBD("lumiere")
                 ring()
             else:
-                insertDB("depart")
+                insertBD("depart")
                 print("au revoir")
                 estDedans = False
         else:
