@@ -12,7 +12,7 @@
 # 						  	Initial Authoring
 # Karan		7 Jan 16		Library updated to add a function to 
 import time,sys
-from grove.grovepi import *
+from grovepi import *
 if sys.platform == 'uwp':
     import winrt_smbus as smbus
     bus = smbus.SMBus(1)
