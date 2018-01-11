@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <script src="Chart.min.js"></script>
+        <style type="text/css">
+        h2{
+            font-family: 'Roboto';
+            font-weight: 500;
+        }
+        canvas{
+            box-shadow: 3px 1px 10px #efefef;
+            margin:auto;
+            padding:50px 0px 50px 0px
+        }
+    </style>
+    </head>
+    <body>
+        <h2>Voici les données de votre session du 8/12/2017: </h2>
+
+        <div id="chart">
+              <canvas id="myChart" width="800" height="300"></canvas>
+        </div>
+    </body>
+
+
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['12H13', '12h16', '12H25', '12H33', '12H40', '12H43', '12H51', '12H55', '13H28', '13H35', '13H45', '12H10', '12H13', '12h16', '12H25', '12H33', '12H40', '12H43', '12H51', '12H55', '13H28', '13H35'],
+            datasets: [{
+                label: 'Acceleration',
+                data:[86,59,90,158,52,263,36,123,66,76,56,67,86,59,90,158,52,263,36,123,66,76,],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+
+    </html>

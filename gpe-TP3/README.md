@@ -5,4 +5,4 @@ Les binomes du groupe de TP3 doivent deposer leur specification de projet dans c
 - pushez
 - respirez ;)
 
-Date limite : mardi 10/10 23h59 (on un script qui va rammasser a cette heure la automatiquement)
+Date limite : mardi 10/10 23h59 (on un script qui va rammasser*ramasser a cette heure la automatiquement)

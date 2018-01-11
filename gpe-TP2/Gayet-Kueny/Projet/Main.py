@@ -1,4 +1,5 @@
 import time
+import datetime
 import grovepi
 import sqlite3
 from Mail import *
@@ -9,10 +10,15 @@ dhtPin = 3 #digital
 luminosityPin = 0 #analogique
 moisturePin = 1 #analogique
 waterPin = 4  #digital
+relayPin = 2
+
+grovepi.pinMode(relayPin, "OUTPUT")
 
 def readTemperatureHumidity():
-    return grovepi.dht(dhtPin,0)
-
+    data = grovepi.dht(dhtPin,0)
+    while data[0] == 0 or data[1] == 0:
+	data = grovepi.dht(dhtPin, 0)
+    return data
 def readLuminosity():
     lum = 0
     for i in (0,5):
@@ -33,19 +39,22 @@ def readWaterLevel():
 def readTresholds():
     db = sqlite3.connect(database)
     c = db.cursor()
-    c.execute("select temperature_treshold, luminosity_treshold, moisture_treshold from settings")
+    c.execute("select temperature_treshold_min, temperature_treshold_max, luminosity_treshold, moisture_treshold from settings")
     datas = c.fetchall()
     db.close
     return datas[0]
 
 def arroser():
-    return
+    grovepi.digitalWrite(relayPin, 1)
+    time.sleep(3)
+    grovepi.digitalWrite(relayPin, 0)
 
 def sendMeasures(temp, hum, lum, moist):
     print(temp, hum, lum, moist)
     db = sqlite3.connect(database)
     c = db.cursor()
-    t = time.strftime("%Y-%m-%d %H:%M:%S")
+    #t = time.strftime("%Y-%m-%d %H:%M:%S")
+    t = (datetime.datetime.now() - datetime.timedelta(hours=1)).isoformat()
     c.execute("insert into temperatures (value, created_at, updated_at) values (?, ?, ?)", (temp, t, t))
     c.execute("insert into humidities (value, created_at, updated_at) values (?, ?, ?)", (hum, t, t))
     c.execute("insert into luminosities (value, created_at, updated_at) values (?, ?, ?)", (lum, t, t))
@@ -57,14 +66,15 @@ def sendMeasures(temp, hum, lum, moist):
 def sendState(state):
     db = sqlite3.connect(database)
     c = db.cursor()
-    t = time.strftime("%Y-%m-%d %H:%M:%S")
+    #t = time.strftime("%Y-%m-%d %H:%M:%S")
+    t = (datetime.datetime.now() - datetime.timedelta(hours=1)).isoformat()
     c.execute("insert into waterings (state, created_at, updated_at) values (?, ?, ?)", (state, t, t))
     db.commit()
     db.close()
     return
 
-temperatureTreshold, luminosityTreshold, moistureTreshold = readTresholds()
-print(temperatureTreshold, luminosityTreshold, moistureTreshold)
+temperatureTresholdMin, temperatureTresholdMax, luminosityTreshold, moistureTreshold = readTresholds()
+#print(temperatureTreshold, luminosityTreshold, moistureTreshold)
 destinataire= 'alexandre.kueny@hotmail.com'
 
 temperature, humidity = readTemperatureHumidity()
@@ -82,10 +92,9 @@ if waterLevel == 0:
 	sendState(False)
 else:
     sendState(False)
-#   if checkConnection():
-#   	sendMailReservoirVide(destinataire)
-#if temperature > temperatureTreshold:
-#   if checkConnection():
-#       sendMailConditionCritique(destinataire)
-
+    if checkConnection():
+   	sendMailReservoirVide(destinataire)
+if temperature > temperatureTresholdMax or temperature < temperatureTresholdMin:
+    if checkConnection():
+        sendMailConditionCritique(destinataire)
 
