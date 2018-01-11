@@ -26,7 +26,6 @@ def lumiere():
 				digitalWrite(led,0)
 				digitalWrite(ledb,0)
 				digitalWrite(ledg,0)
-				time.sleep(1)
 				#print ("DEBUT")
 				if i== None:
 					print ("RIP")
@@ -61,7 +60,7 @@ def lumiere():
                         			digitalWrite(ledb,1)
 						digitalWrite(led,1)
 						print ("ALLL")
-						time.sleep(2)
+						time.sleep(1)
 						digitalWrite(ledg,0)
                                        		digitalWrite(ledb,0)
 			               	 	digitalWrite(led,0)

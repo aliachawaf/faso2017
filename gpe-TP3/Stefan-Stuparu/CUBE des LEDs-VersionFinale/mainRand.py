@@ -19,28 +19,29 @@ def main():
 		print("Demarrage.")
 		time.sleep(2)
 		print("Choisi votre mode")
-		#deg = getAngle()
+		#deg =Angle()
 		if etat  == 0:
 			print("Le programme n'a pas recu une commande de demarrage!")
 		else:
-			deg = getAngle()
+			deg = Angle()
 			while deg>=50:
 				if deg<100:
 					print ("OFF")
+					time.sleep(1)
 					break
-				deg=getAngle()
+				deg=Angle()
 				if deg<200:
 					print("Votre mode est MANUEL.")
 					Music(5)
                        			arduinoString(20)
                        			lumiere()
 					print("Il marche!")
-				deg=getAngle()
+				deg=Angle()
 				if deg>=205:
 					print("Votre mode est Random")
 					Music2(5)
 					lumiereRand()
-				deg=getAngle()
+				deg=Angle()
 	except KeyboardInterrupt:
         	print("FIN d'enregistrement")
 

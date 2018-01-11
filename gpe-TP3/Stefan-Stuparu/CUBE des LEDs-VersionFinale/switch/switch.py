@@ -1,6 +1,6 @@
 import time
 import grovepi
-def getAngle():
+def Angle():
 # Connect the Grove Rotary Angle Sensor to analog port A2
 	potentiometer =2
 
