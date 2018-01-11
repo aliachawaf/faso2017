@@ -12,15 +12,12 @@ led.py | fonctions permettant de gérer les capteurs
 
 Ces fichiers doivent être transférés dans un même répertoire dans un raspberry.
 
-## Versions logicielles 
-
-GrovePi 1.2.2
-
-Raspberry Pi 3, Model B, 1 GB RAM
-<addr>Python 2.7.13
-<addr>Bibliothèques : time, random, smbus 
+## Versions logicielles
+<addr>GrovePi 1.2.2<addr>
+<addr>Raspberry Pi 3, Model B, 1 GB RAM<addr>
+<addr>Python 2.7.13<addr>
+<addr>Bibliothèques : time, random, smbus<addr> 
 
 ## Informations
-
-Version : 1.0.0
-<addr>Mise à Jour : 11/01/2017
+<addr>Version : 1.0.0<addr>
+<addr>Mise à Jour : 11/01/2017<addr>
