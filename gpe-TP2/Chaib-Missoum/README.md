@@ -2,7 +2,7 @@
 
 ## Hiérarchie du code
 
-Le code est composé d'un fichier principal : main.py. Ce dernier fait appel à deux fichiers : music.py et led.py contenant les fonctions dont le programme principal a besoin pour son fonctionnement.
+Le code est composé d'un programme principal : main.py. Ce dernier fait appel à deux fichiers : music.py et led.py contenant les fonctions utilisées dans le programme principal.
 
 Fichier | Contenu
 ------------ | -------------
@@ -15,11 +15,12 @@ Ces fichiers doivent être transférés dans un même répertoire dans un raspbe
 ## Versions logicielles 
 
 GrovePi 1.2.2
+
 Raspberry Pi 3, Model B, 1 GB RAM
-Python 2.7.13
-Bibliothèques : time, random, smbus 
+<addr>Python 2.7.13
+<addr>Bibliothèques : time, random, smbus 
 
 ## Informations
 
 Version : 1.0.0
-Mise à Jour : 11/01/2017
+<addr>Mise à Jour : 11/01/2017
