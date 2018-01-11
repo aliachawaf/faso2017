@@ -3,10 +3,14 @@
 Stefan Cipriana-Elena et Stuparu Andrei-Cristi
 
 Le Projet est réalisé de commencer avec un commande en terminal qui réalise le démarche de programme principal **mainRand.py**. Dans mainRand.py, on a la fonction main qui réalise le démarrage de toutes les autres parties de notre projet.
+
 On commence par avoir un état de programme qui est égal à 0 parce qu’il n’a pas la permission de démarrage sans l’utilisateur qui appuyer le **bouton ON/OFF**. L’utilisateur a 2 secondes dans lesquelles  il doit appuyer le bouton. Si l’utilisateur ne l’appuyer pas le programme c’est terminé.
+
 Si le bouton est appuyé en temps, l’état de program va changer en 1, et il peut commencer la sélection du mode en utilisant le  **bouton Switch** qui a 3 position (première tiers réalise l’arrêt du programme, 2eme tiers sélectionne le **mode Manuel** et le 3eme tiers sélectionne le **mode Random**).
+
 Apres la sélection du mode, le programme réalise la commande reçu. 
 Si le mode sélectionné est **Manuel**, une mélodie va commencer, le **DFRobot Audio Analyser** va reçoit la chanson et sépare les différents sons en différents **bandes de fréquence**. Toutes le données reçoit par DFRobot AA sont transmet en utilisant **Processing** vers le **Raspberry**. Le Raspberry sauvegardé les donnes reçoit dans un fichier pour être analyse plus tard. Apres le nombre de données nécessaires out été sauvegardées dans le fichier, le programme va commencer de lire les données une par une et allume les **LEDs** en rapport avec la fréquence lit. 
+
 Si le mode sélectionné est **Random**, une mélodie va commencer et les LEDs vont s’allumées dans une mode chaotique.
 Apres chaque mode se finie, le programme relise la position de bouton Switch et change les modes jusqu’à il rencontre la position d’arrêt.
 LES LOGICIELS:
