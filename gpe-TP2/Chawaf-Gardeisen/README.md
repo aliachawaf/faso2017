@@ -56,13 +56,13 @@ Pour mettre en place bali, suivez les étapes suivantes :
 
 ### Mise en marche
 
-Tout d'abord, télécharger tous les fichiers .py du projet sur votre raspberry. Puis, depuis votre machine locale connectez-vous à votre raspberry (en SSH via le terminal).
+Tout d'abord, téléchargez tous les fichiers .py du projet sur votre raspberry. Puis, depuis votre machine locale connectez-vous à votre raspberry (en SSH via le terminal).
 
 Ensuite, pour faire fonctionner BALI, rien de plus simple que d'exécuter le programme principal.
 
 Lancez alors le fichier Main.py avec la commande "python Main.py" et le tour est joué.
 
-Le code du programme étant écrit pour une démonstration, il n'est en marche que pour une minute. Assurez-vous donc de commencer en début de minute pour un graphique historique optimal.
+Le code du programme étant écrit pour une démonstration rapide, il n'est fonctionnel que pour une minute. Assurez-vous donc de commencer en début de minute pour un graphique historique optimal.
 
 <br/>
 
@@ -87,7 +87,7 @@ Si vous souhaitez améliorer ce projet, nous vous proposons de :
 
 <br/>
 
-### Auteurs
+## Auteurs
 
  **CHAWAF Alia** & **GARDEISEN Marine**, Polytech' Montpellier, 3ème année Informatique et Gestion
 
