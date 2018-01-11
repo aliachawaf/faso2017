@@ -18,8 +18,8 @@ LES LOGICIELS:
 
 LA PROCEDURE D'INSTALLATION :
 
-Tout d'abord, il faut mettre le Raspberry au courant éléctrique et il faut qu'il soit connecté à une connexion au Internet avec une càble. Après il faut que vous connectez au Raspberry en utilisant la commande "ssh nom_utilisatuer@adresse" et introduissez le mot de passe.
-Après tous ça, le programme se deroule lui-même. Il va enregistrer les données d'environnement.
+Tout d'abord, il faut mettre le Raspberry au courant éléctrique et il faut qu'il soit connecté à une connexion d'Internet avec une câble. 
+Le programme se deroule lui-même quand le Raspberry est connecté. Il va enregistrer les données d'environnement et selon les données de l'environnment la lampe va allumer ou rester desactivé.. 
 Le programme commence avec un bruit fait par le buzzer pour attirer l'attention de l'utilisateur que le programme principal a commencé son travail.
 Et aussi, quand le programme s'arrêt, le buzzer emet le même bruit pour la même raison.
 
