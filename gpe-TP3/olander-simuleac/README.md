@@ -4,13 +4,16 @@ NOM: OLANDER Hedvig et SIMULEAC Ioana-Veronica
 Hiérarchie de code:
 
 * Le programme principale est : "programmeLampe.py". Il utilise les bibliotheques grovePi, buzzer, light et move;
-#*/ On a deux fichiers .txt qui contient les données enregistrées par le captuer de la lumiere (light.txt) et le captuer de mouvement (move.txt);
-#*/ Les fichiers créées pour les bibliotheques, c'est-a-dire Foncbuzzer.py (pour le buzzer), Fonclight.py (pour le capteur de la lumiere), FoncLED.py pour les LEDs, FoncMove.py (pour le captuer de mouvement)
+
+* On a deux fichiers .txt qui contient les données enregistrées par le captuer de la lumiere (light.txt) et le captuer de mouvement (move.txt);
+
+* Les fichiers créées pour les bibliotheques, c'est-a-dire Foncbuzzer.py (pour le buzzer), Fonclight.py (pour le capteur de la lumiere), FoncLED.py pour les LEDs, FoncMove.py (pour le captuer de mouvement)
 
 LES LOGICIELS:
 
-#* Raspberry Pi3 model B
-#* Python version 2.7.6
+* Raspberry Pi3 model B
+
+* Python version 2.7.6
 
 LA PROCEDURE D'INSTALLATION :
 
@@ -21,5 +24,6 @@ Et aussi, quand le programme s'arret, le buzzer emet le meme bruit pour la meme 
 
 INFORMATIONS SUPPLIMENTAIRES:
 
-#* Version 1.0
-#* La derniere date de mis a jour: 11.01.2018
+* Version 1.0
+
+* La derniere date de mis a jour: 11.01.2018
