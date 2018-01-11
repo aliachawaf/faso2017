@@ -1,10 +1,10 @@
 # Bracelet de santé connecté pour personnes âgées
 
-Hardware: Arduino 
-Arduino IDE: Développé sous Arduino IDE v1.8.5 et Processing	3.3.6
-Date:  11 Janvier 2017
-Version: v1.0
-par Nicolas GUARY et Marc-Antoine DANNER
+- Hardware: Arduino 
+- Arduino IDE: Développé sous Arduino IDE v1.8.5 et Processing	3.3.6
+- Date:  11 Janvier 2017
+- Version: v1.0
+- par Nicolas GUARY et Marc-Antoine DANNER
 
 Voici le code mis en place dans le cadre de notre projet FASO: un bracelet de santé connecté pour personnes âgées muni d'un capteur de fréquence cardiaque.
 
