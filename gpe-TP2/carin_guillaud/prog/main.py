@@ -8,6 +8,7 @@ import os
 from enregistrement import *
 import time
 
+print("Mise à jour de la date...")
 os.system('sh maj.sh') #MAJ de la date
 
 bouton = 2   #Port du bouton
