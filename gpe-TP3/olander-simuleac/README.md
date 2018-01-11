@@ -1,6 +1,6 @@
--#PROJET: Lampe Magique
+#PROJET: Lampe Magique
 =======================
--#NOM: OLANDER Hedvig et SIMULEAC Ioana-Veronica
+#NOM: OLANDER Hedvig et SIMULEAC Ioana-Veronica
 =======================
 Hiérarchie de code:
 
