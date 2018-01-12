@@ -8,7 +8,7 @@
 
 Votre boite aux lettres vous informera en temps réel, par le biais d'un mail, de la réception de votre courrier et vous l'indiquera visuellement par une couleur verte sur l’écran, qui deviendra rouge après réinitialisation de la boite aux lettres par simple pression d'un bouton. Elle pourra également vous transférer l'historique de vos réceptions et récupérations de courrier sur un mois via un graphique.
 
-N'hésitez pas à vous référer au **mannuel d'utilisation** pour plus de détails.
+N'hésitez pas à vous référer au **manuel d'utilisation** pour plus de détails.
 
 
 <br />
@@ -23,12 +23,23 @@ Ce projet a été réalisé dans le cadre du module Fondamentaux de l'Architectu
 
 ### Pour commencer ...
 
-Ces instructions vous permettront d'obtenir une copie du projet opérationnel sur votre machine locale à des fins de développement et de test :
+Assurez-vous que vous disposez de tout le matériel nécessaire : écran LCD, bouton pression, capteur de mouvement, shield GrovePi, raspberry et ses cables ethernet et d'alimentation.
 
-  1. git config --global user.name "Votre Nom Ici"
-  2. git config --global user.email "votre_email@votre_email.com"
-  3. git clone https://github.com/delahayd/faso.2017/tree/master/gpe-TP2/Chawaf-Gardeisen
 
+
+<br/>
+
+### Hiérarchie du code
+
+Le projet est composé de plusieurs fichiers sous format .py tous à la racine :
+
+Fichier | Contenu
+--------- | --------
+**Main**.py | programme principal
+**driverLCD**.py | pilote l'affichage de l'écran LCD
+**driverDigital**.py | pilote le capteur de mouvement et le bouton
+**driverMail**.py | envoi de mails (avec et sans pièce jointe)
+**bilanMensuel**.py | créer un graphique historique sous format png
 
 
 <br/>
@@ -45,13 +56,23 @@ Pour mettre en place bali, suivez les étapes suivantes :
 
 ### Mise en marche
 
-Pour faire fonctionner BALI, rien de plus simple que d'exécuter le programme principal.
+Tout d'abord, téléchargez tous les fichiers .py du projet sur votre raspberry. Puis, depuis votre machine locale connectez-vous à votre raspberry (en SSH via le terminal).
 
-Mais avant tout, il faut se connecter à la raspberry en SSH. Pour cela entrer la commande "ssh bali@ig-rasp30" et le mdp "bali" dans un terminal. 
+Ensuite, pour faire fonctionner BALI, rien de plus simple que d'exécuter le programme principal.
 
-Ensuite, il vous suffit seulement de lancer le fichier Main.py avec la commande "python Main.py" et le tour est joué.
+Lancez alors le fichier Main.py avec la commande "python Main.py" et le tour est joué.
 
-Le code du programme étant écrit pour une démonstration, il n'est en marche que pour une minute. Assurez vous donc de commencer en début de minute car il s'arrêtera à la fin de celle-ci.
+Le code du programme étant écrit pour une démonstration rapide, il n'est fonctionnel que pour une minute. Assurez-vous donc de commencer en début de minute pour un graphique historique optimal.
+
+<br/>
+
+### Versions des logiciels et Biliothèques
+
+Raspberry Pi 3
+Python : 2.7.9
+GrovePi : 1.2.2
+
+Bibliothèques datetime, time, matplolib, numpy, smbus, smtplib, email.mime.text, email.mime.  
 
 
 <br/>
@@ -67,7 +88,7 @@ Si vous souhaitez améliorer ce projet, nous vous proposons de :
 
 <br/>
 
-### Auteurs
+## Auteurs
 
  **CHAWAF Alia** & **GARDEISEN Marine**, Polytech' Montpellier, 3ème année Informatique et Gestion
 
@@ -94,5 +115,16 @@ Etant des informaticiens amateurs, nous avons reçu beaucoup d'aide et de soutie
 * **DELAHAYE David et BERRY Vincent**, nos professeurs de FAS
 * les élèves d'IG3, notamment **Alexandre KUENY**
 * les élèves d'IG4, notamment **Johan BRUNET, Godefroi ROUSSEL et Yves-Alain Agbodjogbe**.
+
+
+
+<br/>
+
+### Informations
+
+Version : 1.0.0
+
+Mise à jour : 11/01/2018
+
 
 

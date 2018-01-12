@@ -65,6 +65,8 @@ while True:
 					startMusic(musique)
 					setVolume()
 					music=True
+			else:
+				print "pas motion"
 
 			with open(fileMove, 'r') as file: #ouvrir le fichier pour le mouvement
 				for line in file:

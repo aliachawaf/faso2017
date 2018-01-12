@@ -1,87 +1,50 @@
-# Project Title
+# Bracelet de santé connecté pour personnes âgées
 
-One Paragraph of project description goes here
+- Hardware: Arduino 
+- Arduino IDE: Développé sous Arduino IDE v1.8.5 et Processing	3.3.6
+- Date:  11 Janvier 2017
+- Version: v1.0
+- par Nicolas GUARY et Marc-Antoine DANNER
 
-## Getting Started
+Voici le code mis en place dans le cadre de notre projet FASO: un bracelet de santé connecté pour personnes âgées muni d'un capteur de fréquence cardiaque.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+### Pre-requis
 
-### Prerequisites
+Avant de commencer, veuillez à bien disposer de:
+La librarie LCD disponible ici: https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight/archive/master.zip
+La librarie du module RTC disponible ici: https://raw.githubusercontent.com/SeeedDocument/Grove-RTC/master/res/RTC_Library.zip
+Le bracelet connecté comme suit:
+  - Bouton SOS sur la pin D3
+  - Bouton I'm Fine sur la pin D4
+  - Buzzer sur la pin D6
+  - Capteur de fréquence cardiaque sur la pin D2
+  - Ecran LCD sur une pin i2c
+  - Module RTC sur une pin i2c
 
-What things you need to install the software and how to install them
+## Hiérarchie et contenu
 
-```
-Give examples
-```
+Ce projet fonctionne grâce à deux fichiers:
+  - CodeBracelet.ino pour Arduino IDE
+  - Processing.pde pour Processing
+  
+La partie Arduino contient l'ensemble des fonctions necessaires au fonctionnement du bracelet (bpmCalc(), calcTime(), lcdHeure(), couleurLCD(), lcdBPM(), doitAllumer(), doitEteindre()...)
+La partie processing gère l'envoi des SMS, et traite les données (affichage d'une courbe + stockage des valeurs dans un docuement .txt)
 
-### Installing
+### Installation
 
-A step by step series of examples that tell you have to get a development env running
+Téléversez dans un premier temps le code Arduino IDE sur l'Arduino, mettez ensuite le capteur de fréquence cardiaque à votre oreille: l'écran LCD s'allume en bleu et un message "INIT" s'affiche pour vous confirmer que le bracelet est en marche et que le setup est en cours.
+Une fois fini (environs 6-7 secondes) l'écran s'allume en vert et indique votre fréquence cardiaque et l'heure actuelle.
+Vous pouvez maintenant exectuer le code Processing, un graphique représentant votre fréquence cardiaque s'affiche alors à l'écran, de plus un fichier .txt est crée sur votre bureau, il contient les valeurs relevées par le capteur pour votre fréquence cardiaque.
+De plus, en cas de problème, un SMS est envoyé par une requete http.
 
-Say what the step will be
+## Développé avec
 
-```
-Give the example
-```
+* [Arduino IDE](https://www.arduino.cc/en/main/software)
+* [Processing](https://processing.org/) 
 
-And repeat
+## Auteurs
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* **Nicolas GUARY** 
+élève en IG3 à Polytech Montpellier
+* **Marc-Antoine DANNER** 
+élève en IG3 à Polytech Montpellier
