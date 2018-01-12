@@ -87,7 +87,7 @@ void setup() {
   // Initialise l'horloge (fonctions de la librairie RTC)
   clock.begin();
   clock.fillByYMD(2017, 12, 13); //Date
-  clock.fillByHMS(13, 39, 55); //HEURE A INITIALISER A LA MAIN
+  clock.fillByHMS(10, 57, 00); //HEURE A INITIALISER A LA MAIN
   clock.fillDayOfWeek(WED);//Jour
   clock.setTime();//write time to the RTC chip
 

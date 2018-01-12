@@ -146,7 +146,7 @@ void draw() {
    //Partie SMS
    try
    {
-     if (((valeur<30 || valeur>110) && valeur!=0 && results==null)  || (valeurbool==true && results==null)){ //Cas de connections http
+     if (((valeur<30 || valeur>130) && valeur!=0 && results==null)  || (valeurbool==true && results==null)){ //Cas de connections http
      String myUrl = "https://api.allmysms.com/http/9.0/?login=marcantoine&apiKey=dd089a2d5014721&message=Alerte,%20j%27ai%20besoin%20d%27aide%20au%20plus%20vite%20.%20STOP%20au%2036180&mobile=0695856840&tpoa=Proche";
      String results = doHttpUrlConnectionAction(myUrl);
      System.out.println(results);
