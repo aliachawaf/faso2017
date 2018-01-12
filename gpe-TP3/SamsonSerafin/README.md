@@ -1,34 +1,17 @@
-# faso.2017
+# *Mangeoire connectée pour oiseaux*
 
-groupe TP1 : 
-- ABADIE Aubin & GONCALVES Lucas
-- BAHROUN-ELMADANI
-- BURETTE Alice & FALCONE Thomas
-- CAYUELAS Martin & MACHHOURI Fatima 
-- DEBEIR Luca & MAS Lucas
-- GESTIN Rémi & LECHA Damien
-- LUCIANO Raphael & Anissa LAMHAOUAR
-- CIUBUC Alexandra & TRAINEAU Nathan
-- GUARY Nicolas & DANNER Marc Antoine
+* *Version* : 3.0
+* *Date* : 11/01/2017
+* *Réalisé par* : Audrey SAMSON - Solene SERAFIN
+* *Projet* : Dans le cadre d’un projet effectué en cours de FAS nous avons décidé de réaliser une mangeoire connectée pour oiseaux, celle-ci permettant à l’utilisateur de se délecter de quelques taches telles que vérifier le niveau des graines ou les mettre à l’abri s’il pleut. De plus, cette mangeoire permet de récupérer des données sur l’évolution du poids des graines. 
 
+### *Prérequis* : 
+Afin que le code puise s’exécuter, il faut télécharger quelques bibliothèques :
+* •	SD.h (bibliotheque de base d’Arduino)
+* •	SPI.h (bibliothèque de base d’Arduino)
+* •	math.h (bibliothèque de base d’Arduino)
+* •	Servo.h (bibliothèque de base d’Arduino)
+* •	HX711.h (bibliothèque à télécharger)
 
-groupe TP2 :
-- ALLARD-SERRE Thibaut & FRANCE Quentin
-- ARNAUD Paul & Luangpraseuth Alexis
-- CHAIB Walid & MISSOUM Inès
-- CHAWAF Alia & GARDEISEN Marine
-- GAYET Simon & Kueny Alexandre
-- Lacombe Hugo & Poulain Mathias 
-- MENOUER Amjad & RANARIMAHEFA Mitantsoa Michel
-- CARIN Maxime & Guillaud Nathan
-
-groupe TP3 :
-- Yannick Mayeur & Adam Megherat
-- Theo Ponthieu & Julien Roumagnac
-- William Regnart & Etienne Saimond
-- Audrey SAMSON & Solene Serafin
-- Alexis SANCHEZ & Lucas Sardois
-- Yvan SANSON & Marie Salelles
-- Hedvig OLANDER & Simuleac Ioana-Veronica
-- Stefan Cipriana-Elena & Stuparu Andrei-Cristi
-
+### *Procédure d’installation du code* :
+Il faut téléverser le programme sur l’Arduino.
