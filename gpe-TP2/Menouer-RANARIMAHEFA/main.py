@@ -58,7 +58,7 @@ if __name__ == '__main__':
             dust = ser.readline()
 
             # si on detecte de la fumee
-            if dust == 5000:
+            if dust > 80000:
                  grovepi.digitalWrite(buzzer,1)
                  buzer_on = True
                  setText("Fumee detectee !")
