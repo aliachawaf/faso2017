@@ -48,13 +48,13 @@ void draw(){
   }
   
   
-  if(minute()%1 == 0 && second() == 30)
+  if(minute()==00 && second()==0) //Toutes les heures
   {
     write(); // Ecrase et recrée le fichier de positions avec des nouvelles valeurs
     delay(300);
   }
   
-  if (second()==30)
+  if (minute()%15 == 0)
   {
     recupH();
     println("Position dans le tableau : " + posLh);
