@@ -22,7 +22,7 @@ Materiels
 
 Bibliothéques et dépendances
 ======
-Python 3
+* Python 3
 * [Speech recognition pour Python][1] et toutes ses dépendances
 * Les dernières versions de bluetooth et PyBlueEz
 * [Python for vlc][2]
