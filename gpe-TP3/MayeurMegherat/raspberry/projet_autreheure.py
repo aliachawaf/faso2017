@@ -94,7 +94,7 @@ def estMaison():
 while True:
     if readU() < limiteUltrason:
         if estDedans:
-            if readL() < limiteLuminosite and (int(time.strftime('%H')) < 17 or int(time.strftime('%H')) >= 18):
+            if readL() < limiteLuminosite and (int(time.strftime('%H')) < 10 or int(time.strftime('%H')) >= 18):
                 print("alerte lumiere")
                 insertBD("lumiere")
                 ring()
