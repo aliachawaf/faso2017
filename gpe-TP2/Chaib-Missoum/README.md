@@ -17,9 +17,9 @@ Ces fichiers doivent être transférés dans un même répertoire dans un raspbe
 * GrovePi 1.2.2<addr>
 * Raspberry Pi 3, Model B, 1 GB RAM<addr>
 * Python 2.7.13<addr>
-* Bibliothèques : time, random, smbus<addr> 
+* Bibliothèques : time, random, smbus<addr> , snowboy detector
 
 ## Informations
 
-* Version : 1.0.0
-* Mise à Jour : 11/01/2017
+* Version : 2.0.0
+* Mise à Jour : 01/04/2018
