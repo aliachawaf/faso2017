@@ -6,7 +6,7 @@ Le code est composé d'un programme principal : main.py. Ce dernier fait appel �
 
 Fichier | Contenu
 ------------ | -------------
-main.py | programme principal
+main.py & reconnaissance.py | programmes principaux
 music.py | fonctions permettant de gérer la musique
 led.py | fonctions permettant de gérer les capteurs
 
