@@ -4,7 +4,7 @@ groupe TP1 :
 - ABADIE Aubin & GONCALVES Lucas
 - BAHROUN-ELMADANI
 - BURETTE Alice & FALCONE Thomas
-- CAYUELAS Martin & MACHHOURI Fatima 
+- CAYUELAS Martin & Fatima 
 - DEBEIR Luca & MAS Lucas
 - GESTIN Rémi & LECHA Damien
 - LUCIANO Raphael & Anissa LAMHAOUAR
